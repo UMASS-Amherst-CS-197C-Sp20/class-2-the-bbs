@@ -3,15 +3,17 @@
 #define MAX_ENTRIES 5
 
 // Given an array of doubles `entries` of size `length`, let's calculate some basic statistics (Check wikipedia if you don't remember how to do stddev).
+
 void print_stats(double *entries, int length) {
   double sum = 0;
   double mean = 0;
   double max = 0;
-  double min = 0;
+  double min = 10000;
   double stddev = 0;
   for (int i=0; i<length; i++) {
     sum += entries[i];
   }
+
   printf("\tN=%d\n", length);
   printf("\tsum=%lf\n", sum);
   printf("\tmean=%lf\n", mean);
@@ -39,6 +41,7 @@ int main(void) {
   while(1) {
     // "clear" the array by ignoring the old items.
     filled = 0;
+   
 
     // Stop when we run out of space.
     while(filled < MAX_ENTRIES) {
@@ -48,6 +51,7 @@ int main(void) {
 
       // Take input if possible.
       double input;
+
       int status = scanf("%lf", &input);
 
       if (status == 1) {
@@ -67,6 +71,10 @@ int main(void) {
     }
 
     // TODO: print all the items entered here:
+	for (int a = 0; a<filled;a++) {
+	printf("entries[a] = %lf \n",entries[a]);
+	}
+		
   }
 }
 
