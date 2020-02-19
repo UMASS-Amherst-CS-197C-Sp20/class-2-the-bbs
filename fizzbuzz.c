@@ -13,10 +13,23 @@
 int main(void) {
   const int N = 100;
   // Open a file for writing.
-  FILE* out = fopen("fizzbuzz.txt", "w");
+  FILE* out = fopen("fizzbuzzFinal.txt", "w");
   // Demonstrate file I/O.
-  fprintf(out, "This doesn't work yet!\n");
 
+  for(int i = 0;i<=100;i++){
+	if((i%3 == 0)&&(i % 5 == 0)) {
+		fprintf(out,"FizzBuzz ");
+	}
+	else if(i%3 == 0){
+                fprintf(out,"Fizz ");
+        }
+	else if(i % 5 == 0) {
+                fprintf(out,"Buzz ");
+        }
+	else {
+		fprintf(out,"%d ",i);
+	}
+ }
   // We need to close the file we're writing to, otherwise we may lose data.
   fclose(out);
   // Tell the shell/terminal that we were successful.
